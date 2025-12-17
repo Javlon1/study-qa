@@ -1,0 +1,12 @@
+@import './ui/vereables';
+@import './ui/mixin';
+@import './global';
+
+@import './layout/header';
+
+@import './screens/home/intro';
+@import './screens/home/digital';
+@import './screens/home/info';
+@import './screens/home/start';
+
+@import './layout/footer';

@@ -1,0 +1,79 @@
+.digital {
+    padding: 70px 0;
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 90px;
+        &__img {
+            min-width: 300px;
+            flex: 1;
+            position: relative;
+            border-radius: 10px;
+            img {
+                width: 100%;
+                position: relative;
+                z-index: 3;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                background-color: $white;
+                z-index: 2;
+                border: 2px solid #adff44;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 32px;
+                left: 32px;
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+                background-color: $white;
+                z-index: 1;
+                border: 2px solid #aeff4488;
+            }
+        }
+        &__wrap {
+            min-width: 300px;
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 57px;
+            .title {
+                width: 90%;
+                @include content(700, $black);
+                span {
+                    color: #0296f0;
+                }
+            }
+            .list {
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                align-items: flex-start;
+                &__text {
+                    @include text(400, $gray);
+                    position: relative;
+                    i {
+                        position: absolute;
+                        left: -10px;
+                        top: 5px;
+                        color: #0296f0;
+                        transform: translateX(-100%);
+                    }
+                }
+            }
+            .btn {
+                @include btn($white, $gradient, 18px 60px, 8px);
+            }
+        }
+    }
+}

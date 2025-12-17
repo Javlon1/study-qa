@@ -1,0 +1,23 @@
+@mixin title($weight, $color) {
+    font-size: 50px;
+    font-weight: $weight;
+    color: $color;
+}
+@mixin content($weight, $color) {
+    font-size: 40px;
+    font-weight: $weight;
+    color: $color;
+}
+@mixin text($weight, $color) {
+    font-size: 18px;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin btn($color, $bcColor, $padding, $radius) {
+    background: $bcColor;
+    padding: $padding;
+    border-radius: $radius;
+    @include text(600, $color);
+    transition: $transition;
+}

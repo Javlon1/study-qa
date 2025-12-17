@@ -1,0 +1,98 @@
+.info {
+    padding: 75px 0;
+    &__content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+        &__title {
+            width: 75%;
+            @include content(700, $black);
+            text-align: center;
+            span {
+                color: #0296f0;
+            }
+            position: relative;
+            &::before {
+                content: url('../../img/icon.png');
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 70%);
+            }
+        }
+        &__text {
+            @include text(600, $black);
+        }
+        &__wrap {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            .card {
+                min-width: 250px;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                &__img {
+                    position: relative;
+                    width: 100%;
+                    height: 200px;
+                    .opacity {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: black;
+                        opacity: 0.5;
+                        z-index: 5;
+                        border-radius: 10px;
+                        transition: $transition;
+                    }
+                    img {
+                        border-radius: 10px;
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        z-index: 3;
+                    }
+                    &::after,
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 11px;
+                        left: 11px;
+                        width: 100%;
+                        height: 100%;
+                        background-color: $white;
+                        border-radius: 10px;
+                        border: 2px solid #f2f2f2;
+                        z-index: 2;
+                        transition: $transition;
+                    }
+                }
+                &__text {
+                    @include text(500, $black);
+                }
+                &:hover {
+                    .opacity {
+                        opacity: 0;
+                    }
+                    .card__img::after {
+                        border: 2px solid #adff44;
+                    }
+                    .card__img::before {
+                        top: 22px;
+                        left: 22px;
+                        opacity: 0.5;
+                        border: 2px solid #adff44;
+                    }
+                }
+            }
+        }
+        &__link {
+            @include btn($white, $gradient, 15px 30px, 10px);
+        }
+    }
+}
