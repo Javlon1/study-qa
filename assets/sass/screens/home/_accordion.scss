@@ -1,0 +1,74 @@
+.accordion {
+    padding: 100px 0;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+        &__title {
+            @include content(700, $black);
+            span {
+                color: $blue;
+            }
+        }
+        &__text {
+            @include text(500, $gray);
+            text-align: center;
+            max-width: 600px;
+        }
+        &__wrap {
+            display: flex;
+            flex-direction: column;
+            .details {
+                display: flex;
+                flex-direction: column;
+                &__summary {
+                    padding: 20px;
+                    padding-right: 60px;
+                    cursor: pointer;
+                    border-top: 1px solid $gray;
+                    font-size: 22px;
+                    color: $gray;
+                    font-weight: 600;
+                    list-style-type: none;
+                    position: relative;
+                    &__icon {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: 25px;
+                        right: 20px;
+                        transition: $transition;
+                    }
+                }
+                &:last-child {
+                    border-bottom: 1px solid $gray;
+                }
+                &[open] .details__summary__icon {
+                    color: $blue;
+                    transform: translateY(-50%) rotate(-180deg);
+                }
+                &__el {
+                    border-top: 1px solid $gray;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    &__text {
+                        @include text(500, $gray);
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        i {
+                            color: $green;
+                        }
+                    }
+                }
+            }
+        }
+        &__link {
+            @include btn($white, $gradient, 15px 30px, 5px);
+        }
+    }
+}
