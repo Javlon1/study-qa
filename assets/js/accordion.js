@@ -1,4 +1,4 @@
-const detailsElements = document.querySelectorAll('.accordion__content details');
+const detailsElements = document.querySelectorAll('details');
 
 detailsElements.forEach((details) => {
     details.addEventListener('toggle', function () {
